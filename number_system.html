@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0.7;
+            
+        }
+
+        h1 {
+            color: #333;
+            
+        }
+
+        label {
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        select, input {
+            
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px 0;
+            
+            
+        }
+
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            
+        }
+
+        button:hover {
+            background-color: #555;
+            
+        }
+
+        #result {
+            font-weight: bold;
+        
+            margin: 20px;
+        }
+    </style>
+</head>
+<style>
+    body {
+        background-image: url(number.png);
+        background-size: cover;
+       
+        background-repeat: no-repeat;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Number System Converter</h1>
+        <label for="from-system">From System:</label>
+        <select id="from-system">
+            <option value="binary">Binary</option>
+            <option value="decimal">Decimal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+            <option value="octal">Octal</option> <!-- Added octal -->
+        </select>
+        
+        <label for="to-system">To System:</label>
+        <select id="to-system">
+            <option value="binary">Binary</option>
+            <option value="decimal">Decimal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+            <option value="octal">Octal</option> <!-- Added octal -->
+        </select>
+        
+        <label for="input-number">Enter a number:</label>
+        <input type="text" id="input-number">
+        
+        <button onclick="convertNumber()">Convert</button>
+        
+        <p id="result">Result: </p>
+    </div>
+    
+    <script>
+        function convertNumber() {
+            const fromSystem = document.getElementById("from-system").value;
+            const toSystem = document.getElementById("to-system").value;
+            const inputNumber = document.getElementById("input-number").value;
+    
+            let result;
+    
+            // Define base values for each number system
+            const baseValues = {
+                binary: 2,
+                decimal: 10,
+                hexadecimal: 16,
+                octal: 8,
+            };
+    
+            // Check if the conversion is valid
+            if (fromSystem in baseValues && toSystem in baseValues) {
+                const fromBase = baseValues[fromSystem];
+                const toBase = baseValues[toSystem];
+                
+                try {
+                    // Convert the input number to decimal (base 10) first
+                    const decimalNumber = parseInt(inputNumber, fromBase);
+                    
+                    // Then convert it to the target base
+                    result = decimalNumber.toString(toBase);
+                    
+                    // Display the result
+                    const resultElement = document.getElementById("result");
+                    resultElement.innerHTML = `Result: ${result}`;
+                } catch (error) {
+                    result = "Conversion error.";
+                }
+            } else {
+                result = "Invalid conversion.";
+            }
+    
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = `Result: ${result}`;
+        }
+    </script>
+    
+    </body>
+</html>

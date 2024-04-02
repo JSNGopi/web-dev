@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float and clear</title>
+    <style>
+        .cards{
+            border: 2px solid black;
+            display: flow-root;
+        }
+        img{
+            float: right;
+        }
+        .card{
+            border: 2px solid red;
+            
+        }
+        .cards :nth-child(3){
+            clear: right;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <img src="https://thumbs.dreamstime.com/b/motor-yacht-boat-rio-yachts-best-italian-35377050.jpg?w=768" alt="" width="140px">
+        <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ullam.</div>
+        <div class="card">card2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi beatae voluptatem architecto. Esse, accusamus officia tempora ratione, cum non id qui mollitia, saepe impedit itaque quod dicta aperiam ullam blanditiis.</div>
+        <div class="card">card3</div>
+    </div>
+</body>
+</html>

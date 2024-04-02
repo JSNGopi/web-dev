@@ -10,6 +10,10 @@
             margin: 0;
             padding: 0;
         }
+        header{
+            position: sticky;
+            top: 0;
+        }
         nav{
             background-color: pink;
             height: 20px;
@@ -22,9 +26,14 @@
             text-align: center;
             
         }
+        main{
+            background-color: black;
+            color: white;
+            padding: 35px;
+        }
         .box1{
             background-color: palevioletred;
-            height: 40vh;
+            height: 70vh;
             width: 45%;
             display: inline-block;
             margin: 0 10px;
@@ -32,10 +41,28 @@
         
         .box2{
             background-color: blue;
-            height: 40vh;
+            height: 70vh;
             width: 45%;
             display: inline-block;
             margin: 0 10px;
+        }
+        .textbox{
+            border: 2px solid white;
+            padding: 34px;
+            margin: 10px 32vw;
+            font-size: 2em;
+            border-radius: 10px;
+
+        }
+        .orangebox{
+            background-color: orange;
+            width: 32px;
+            height: 32px;
+            position: fixed;
+            bottom: 35px;
+            right: 50px;
+            border-radius: 20px;
+
         }
         footer{
             background-color: bisque;
@@ -60,6 +87,7 @@
         <div class="textbox">
             <p>wel come devolopers</p>
         </div>
+        <div class="orangebox"></div>
     </main>
     <footer>
 
